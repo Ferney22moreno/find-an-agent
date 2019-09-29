@@ -1,0 +1,150 @@
+/*** functions ***/
+$browser-context: 16px;
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels / $context * 1}em;
+}
+/*** functions ***/
+
+*{
+	outline: none;
+}
+
+body, h1, h2, h3, h4{
+	font-size: 16px;
+	font-family: sans-serif;
+	margin: 0px;
+}
+
+.header{
+	position: relative;
+	width: 950px;
+	height: 400px;
+	margin: auto;
+	&:before{
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-color: rgba(#083163, .4);
+	}
+	img{
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	&__uvp{
+		position: absolute;
+		transform: translate(-50%);
+		left: 50%;
+		top: 60%;
+		margin: 0;
+		color: white;
+		font-size: 40px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+}
+
+.top-content{
+	margin: 40px 0 60px;
+	&__elements{
+		max-width: 400px;
+		margin: 80px auto 0;
+	}
+	&__intro-message{
+		text-align: center;
+		display: block;
+		color: #19405d;
+		font-size: em(15px);
+		text-transform: uppercase;
+		margin-bottom: 25px;
+		letter-spacing: 1px;
+	}
+	&__input{
+		width: 100%;
+		padding: 15px 0;
+		text-align: center;
+		border: 1px solid #69a2bd;
+		font-size: em(15px);
+	}
+	&__message{
+		font-size: em(10px);
+		text-align: center;
+		display: block;
+		margin: 10px 0 0;
+		color: #ea9292;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	&__btn{
+		display: block;
+		margin: auto;
+		background: none;
+		background-color: #E91E63;
+		border: 1px solid #E91E63;
+		text-transform: uppercase;
+		color: white;
+		padding: 10px 50px;
+		letter-spacing: 1px;
+		margin-top: 30px;
+		font-size: em(15px);
+		transition: all .3s linear;
+		cursor: pointer;
+		&:hover{
+			background-color: white;
+			color: #E91E63;
+		}
+	}
+}
+
+.agents-content{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 950px;
+	width: 90%;
+	margin: 0 auto 60px;
+	&__agent-info{
+		width: 30%;
+		text-align: center;
+		border: 3px solid #69a2bd;
+		margin: 20px 10px;
+		padding: 20px 0 40px;
+		text-transform: uppercase;
+		span{
+			display: block;
+			&:first-of-type{
+				font-size: em(12px);
+				font-weight: 100;
+				margin-bottom: 5px;
+				color: #4e4e4e;
+			}
+			&:last-of-type{
+				font-size: em(18px);
+				font-weight: 400;
+				color: #486e80;
+			}
+		}
+	}
+	&__name{
+		&:before, &:after{
+			content: '';
+			width: 170px;
+			height: 1px;
+			background-color: #ccc;
+			display: block;
+			margin: 20px auto;
+		}
+	}
+
+	&__error-info{
+		border: 2px solid #e64c4c;
+		display: inline-block;
+		padding: 20px 30px;
+		font-size: 15px;
+		max-width: 320px;
+		text-align: center;
+		line-height: 25px;
+	}
+}
